@@ -1,0 +1,15 @@
+{
+    "extends": "eventbrite-react",
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack/web.dev.config.js"
+            }
+        }
+    },
+    "rules": {
+        "import/named": "off",
+        "no-invalid-this": "off",
+        "semi": ["error", "never"]
+    }
+}
