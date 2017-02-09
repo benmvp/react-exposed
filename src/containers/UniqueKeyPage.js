@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 import range from 'lodash/range'
+import uniqueId from 'lodash/uniqueId'
 
 import styles from './UniqueKeyPage.styles'
 
 const INITIAL_VALUES = range(6)
-    .map((index) => ({value: `value${index}`, display: `Item #${index + 1}`}))
+    .map((index) => ({value: uniqueId('value'), display: `Item #${index + 1}`}))
 
 export default class IndexKeyPage extends Component {
     state = {
@@ -17,7 +18,7 @@ export default class IndexKeyPage extends Component {
         this.setState({
             values: [
                 {
-                    value: `value${Date.now()}`,
+                    value: uniqueId('value'),
                     display: `Item #${currentValues.length + 1}`
                 },
                 ...currentValues
@@ -28,7 +29,7 @@ export default class IndexKeyPage extends Component {
     render() {
         let {values} = this.state
         let listItems = values.map(({display, value}) => (
-            <li key={value}>{display}</li>
+            <li key={value}>{display} ({value})</li>
         ))
 
         return (
