@@ -30,7 +30,7 @@ export default class IndexKeyPage extends Component {
     render() {
         let {values} = this.state
         let listItems = values.map(({display, value}) => (
-            <li key={value}>{display} ({value})</li>
+            <li key={value}>{`${display} (${value})`}</li>
         ))
 
         return (
