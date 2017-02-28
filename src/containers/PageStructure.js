@@ -24,6 +24,7 @@ export default class PageStructure extends Component {
                     <Link to={_genPath()}>HOME</Link>
                     <Link to={_genPath('index-as-key')}>Index as Key</Link>
                     <Link to={_genPath('unique-key')}>Unique Value key</Link>
+                    <Link to={_genPath('inputs')}>Inputs</Link>
                 </header>
                 <main style={styles.main}>
                     {children}
