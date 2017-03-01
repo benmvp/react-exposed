@@ -12,6 +12,7 @@ export default class InputsPage extends Component {
     }
 
     _handleOnChange(e) {
+        console.log(e.target.value)
         this.setState({value: e.target.value})
     }
 
@@ -39,7 +40,7 @@ export default class InputsPage extends Component {
                 </aside>
 
                 <label htmlFor="wrongControlled" style={styles.label}>
-                    <h3>Incorrect controlled input with <code>value</code> w/o <code>onChange</code></h3>
+                    <h3>Incorrect controlled input with <code>value</code> without <code>onChange</code></h3>
                 </label>
                 <input
                     id="wrongControlled"
