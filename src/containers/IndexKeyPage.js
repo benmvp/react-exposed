@@ -35,7 +35,10 @@ export default class IndexKeyPage extends Component {
 
         return (
             <div>
-                <h1>Index as Key</h1>
+                <h1>
+                    Index as Key
+                    (<a href="https://github.com/benmvp/react-exposed/blob/master/src/containers/IndexKeyPage.js">source</a>)
+                </h1>
 
                 <section style={styles.exampleSection}>
                     <ol start="0">{listItems}</ol>

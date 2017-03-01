@@ -35,7 +35,10 @@ export default class IndexKeyPage extends Component {
 
         return (
             <div>
-                <h1>Unique Value as Key</h1>
+                <h1>
+                    Unique Value as Key
+                    (<a href="https://github.com/benmvp/react-exposed/blob/master/src/containers/UniqueKeyPage.js">source</a>)
+                </h1>
 
                 <div style={styles.exampleSection}>
                     <ul>{listItems}</ul>

@@ -20,7 +20,10 @@ export default class InputsPage extends Component {
 
         return (
             <div>
-                <h1>Inputs</h1>
+                <h1>
+                    Inputs
+                    (<a href="https://github.com/benmvp/react-exposed/blob/master/src/containers/InputsPage.js">source</a>)
+                </h1>
 
                 <label htmlFor="uncontrolled" style={styles.label}>
                     <h3>Uncontrolled input with <code>defaultValue</code></h3>
@@ -31,6 +34,9 @@ export default class InputsPage extends Component {
                     style={styles.input}
                     defaultValue="defaultValue"
                 />
+                <aside style={styles.info}>
+                    When using <code>defaultValue</code> we get a "normal" input where the browser is in control of the input's value. You would need to use <code>ref</code> to ge the value out of the input.
+                </aside>
 
                 <label htmlFor="wrongControlled" style={styles.label}>
                     <h3>Incorrect controlled input with <code>value</code> w/o <code>onChange</code></h3>
@@ -41,6 +47,9 @@ export default class InputsPage extends Component {
                     style={styles.input}
                     value="incorrect"
                 />
+                <aside style={styles.info}>
+                    If we specify <code>value</code> prop of the input without <code>onChange</code> prop we will get a warning (see console). We also cannot type within the input.
+                </aside>
 
                 <label htmlFor="fakeControlled" style={styles.label}>
                     <h3>Fake controlled input with <code>value</code> & dummy <code>onChange</code></h3>
@@ -52,6 +61,9 @@ export default class InputsPage extends Component {
                     value="fake"
                     onChange={this._handleOnChangeFake.bind(this)}
                 />
+                <aside style={styles.info}>
+                    Tricking React by providing a fake <code>onChange</code> still does not make typing in the input field possible. However, it illuminates the fact that React uses a "fake" <code>onChange</code> event because the input field never contains the typed content (see console).
+                </aside>
 
                 <label htmlFor="controlled" style={styles.label}>
                     <h3>Correct controlled input with <code>value</code> & state-changing <code>onChange</code></h3>
@@ -63,11 +75,8 @@ export default class InputsPage extends Component {
                     value={value}
                     onChange={this._handleOnChange.bind(this)}
                 />
-
-                <aside>
-                    <p>Because the code is using <code>index</code> as the <code>key</code>, when the ADD button is clicked all of the items update when the new item is added to the top of the list. This is making the virtual DOM diffing to do more work than is necessary!</p>
-
-                    <p>Use your Web Inspector to look at the Elements Panel and see how the list items update.</p>
+                <aside style={styles.info}>
+                    The proper way to create a controlled component, is to update React <code>state</code> when <code>onChange</code> is fired. This will cause a re-render of the component, which will then update the input's <code>value</code>.
                 </aside>
             </div>
         )

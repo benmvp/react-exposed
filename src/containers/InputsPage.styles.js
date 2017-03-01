@@ -1,8 +1,8 @@
 export default {
-    label: {
-        marginTop: '.5em'
-    },
     input: {
-        fontSize: '2em'
+        fontSize: '2em',
+    },
+    info: {
+        margin: '1em 0 2em'
     }
 }
