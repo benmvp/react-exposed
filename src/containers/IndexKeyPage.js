@@ -30,7 +30,7 @@ export default class IndexKeyPage extends Component {
     render() {
         let {values} = this.state
         let listItems = values.map(({display}, index) => (
-            <li key={index}>{display}</li>
+            <li key={index}>{`${display} (${index})`}</li>
         ))
 
         return (
@@ -41,7 +41,7 @@ export default class IndexKeyPage extends Component {
                 </h1>
 
                 <section style={styles.exampleSection}>
-                    <ol start="0">{listItems}</ol>
+                    <ul start="0">{listItems}</ul>
                     <button
                         style={styles.addButton}
                         onClick={this._handleAdd.bind(this)}
