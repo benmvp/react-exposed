@@ -1,48 +1,32 @@
 {
   "name": "react-exposed",
   "private": true,
-  "dependencies": {
-    "lodash": "^4.17.4",
-    "marked": "^0.3.6",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-core": "^6.22.1",
-    "babel-eslint": "^7.1.1",
-    "babel-loader": "^6.2.10",
-    "babel-plugin-transform-class-properties": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.22.0",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-react": "^6.22.0",
-    "eslint": "^3.14.1",
-    "eslint-config-eventbrite-react": "^2.0.1",
-    "eslint-import-resolver-webpack": "^0.8.1",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0",
-    "file-loader": "^0.10.0",
-    "gh-pages": "^0.12.0",
-    "json-loader": "^0.5.4",
-    "pre-commit": "^1.2.2",
-    "raw-loader": "^0.5.1",
-    "react-hot-loader": "^1.3.1",
-    "webpack": "^2.2.1",
-    "webpack-dev-server": "^1.16.3"
-  },
   "scripts": {
-    "start": "webpack-dev-server --config webpack/web.dev.config.js --inline --hot --colors",
-    "test": "yarn run lint",
-    "lint": "eslint src",
-    "bundle": "NODE_ENV=production webpack --config webpack/web.prod.config.js --progress --colors",
-	"deploy": "yarn run bundle && gh-pages --dist public --message 'Update production with latest'"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "engines": {
-	"node": ">=6"
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-router": "^3.2.6",
+    "react-scripts": "3.4.1"
   },
-  "pre-commit": [
-	"test"
-  ]
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
